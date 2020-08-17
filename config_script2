@@ -1,0 +1,10 @@
+#Vim config
+git clone git@github.com:94DanielBrown/vim.git vim
+mkdir .vim
+cp -r vim/* .vim/
+ln -s .vim/.vimrc .vimrc
+
+#Install vundle
+git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+
+

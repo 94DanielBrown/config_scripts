@@ -1,0 +1,19 @@
+sudo -s <<EOF
+#Install packages
+dnf install -y tilix ansible wget zsh vim
+dnf group install -y "Deepin Desktop"
+EOF
+#Remap keys
+echo "remove Lock = Caps_Lock
+keysym Caps_Lock = BackSpace
+remove Lock = BackSpace
+keysym BackSpace = Caps_Lock" > .Xmodmap
+sudo chmod +x .Xmodmap
+echo "if [ -f $HOME/.Xmodmap ]; then
+  /usr/bin/xmodmap $HOME/.Xmodmap
+fi" > .xinitrc
+sudo chmod +x .xinitrc
+#zsh config
+chsh /bin/zsh
+
+
